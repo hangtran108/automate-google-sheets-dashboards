@@ -18,8 +18,8 @@ function daily() {
   function onOpen1() {
     var ui = SpreadsheetApp.getUi();
     // Or DocumentApp or FormApp.
-    begroup_toolbar = ui.createMenu('veep_production');
-    begroup_toolbar.addItem('Extract Data', 'extract_data').addToUi();
+    toolbar = ui.createMenu('your project id');
+    toolbar.addItem('Extract Data', 'extract_data').addToUi();
   }
   function runQuery1(query, output_row_starts, output_col_starts, delete_until_col) {
     // Replace this value with the project ID listed in the Google
@@ -30,7 +30,7 @@ function daily() {
     if (!output_col_starts) {
       output_col_starts = 1;
     }
-    var projectId = 'veep-production';
+    var projectId = 'Your project Id';
     var spreadsheet = SpreadsheetApp.getActive();
     var sheet = spreadsheet.getSheetByName("raw"); //specify the sheet's name that you want your data to be imported to
     if (!delete_until_col) {
